@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+
+
+    .signup {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        button {
+            pointer-events: none;
+            background-color: red;
+            border: none;
+            color: white;
+            padding: 10px;
+            // pointer-events: stroke;
+        }
+    }
+}
