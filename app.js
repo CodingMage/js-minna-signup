@@ -1,4 +1,4 @@
-console.log('hello');
+('hello');
 
 //Selector
 const firstname = document.querySelector('.firstname')
@@ -9,7 +9,21 @@ const errormsg2 = document.querySelector('.errormsg2')
 const password1 = document.querySelector('.password1')
 const password2 = document.querySelector('.password2')
 const errormsg3 = document.querySelector('.errormsg3')
+const errormsg4 = document.querySelector('.errormsg4')
+
 const email = document.querySelector('.email')
+const loginBtn = document.querySelector('.login-btn')
+const loginSubmit = document.querySelector('.login-submit')
+
+const signup = document.querySelector('.signup')
+const login = document.querySelector('.login')
+const loginEmail = document.querySelector('.login-email')
+const loginPassword = document.querySelector('.login-password')
+
+
+
+
+
 
 const all = document.querySelectorAll('.all')
 
@@ -24,14 +38,24 @@ submit.addEventListener('click', checkform);
 firstname.addEventListener('input', checkname)
 lastname.addEventListener('input', checkname1)
 email.addEventListener('change', checkemail)
+loginEmail.addEventListener('change', checkemail)
+
 password1.addEventListener('change', checkpasslength)
+loginPassword.addEventListener('change', checklen)
+
 password2.addEventListener('change', checkpass)
+loginBtn.addEventListener('click', logshow);
+loginSubmit.addEventListener('click', logsubmit);
+
+
 
 
 
 
 
 //fuinctions
+
+
 let namepass = false
 
 function checkname() {
@@ -50,7 +74,6 @@ function checkname() {
     }
 
 
-    console.log(namepass);
     enablebtn()
 }
 
@@ -68,7 +91,7 @@ function checkname1() {
 
 
     }
-    console.log('name', namepass);
+    ('name', namepass);
     enablebtn()
 
 }
@@ -86,7 +109,6 @@ function checkpass() {
         passwordpass1 = true
     }
 
-    console.log('pass1', passwordpass1);
     enablebtn()
 
 
@@ -115,7 +137,6 @@ function checkpasslength() {
 
     }
 
-    console.log('pass2', passwordpass2);
     enablebtn()
 
 
@@ -124,11 +145,11 @@ function checkpasslength() {
 let emailpass = false
 
 function checkemail() {
-    if (email.value.length > 0) {
+    if (email.value.length > 0 || loginEmail.value.length > 0) {
         emailpass = true
     }
-    console.log('email', emailpass);
     enablebtn()
+    enablebtn1()
 }
 
 function checkform(e) {
@@ -142,10 +163,6 @@ function checkform(e) {
 
 
 
-
-
-
-
     submit.innerHTML = 'Done and Submited '
 
 }
@@ -153,12 +170,51 @@ function checkform(e) {
 function enablebtn() {
 
     if (namepass && emailpass && passwordpass2 && passwordpass1) {
-        console.log('all file');
+        ('all file');
         submit.style.pointerEvents = 'unset'
         submit.style.backgroundColor = 'blue'
     }
 }
 
-// if (all.value < 0) {
-//     console.log('empty');
-// }
+function logshow() {
+    signup.style.display = 'none'
+    login.style.display = 'flex'
+
+
+}
+
+let loginPasswordpass = false
+
+function checklen() {
+    if (loginPassword.value.length < 8) {
+        errormsg4.innerHTML = 'password is not long enough'
+        loginPasswordpass = false
+
+
+    } else {
+        errormsg4.innerHTML = ''
+        loginPasswordpass = true
+
+    }
+    enablebtn1()
+}
+
+function enablebtn1() {
+
+    if (emailpass && loginPasswordpass) {
+        loginSubmit.style.pointerEvents = 'unset'
+        loginSubmit.style.backgroundColor = 'blue'
+    }
+}
+
+
+function logsubmit(e) {
+    e.preventDefault();
+
+    loginEmail.value = ''
+    loginPassword.value = ''
+    loginSubmit.innerHTML = 'Logged in successfully'
+
+
+
+}

@@ -18,6 +18,10 @@ body {
         flex-direction: column;
         gap: 20px;
 
+        input {
+            padding: 10px;
+        }
+
         button {
             pointer-events: none;
             background-color: red;
@@ -26,5 +30,34 @@ body {
             padding: 10px;
             // pointer-events: stroke;
         }
+
+        p {
+            span {
+                color: aqua;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .login {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+
+
+        input {
+            padding: 10px;
+        }
+
+        button {
+            pointer-events: none;
+            background-color: red;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+
+        }
+
     }
 }

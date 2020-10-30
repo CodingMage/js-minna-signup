@@ -23,11 +23,42 @@ body {
   gap: 20px;
 }
 
+.container .signup input {
+  padding: 10px;
+}
+
 .container .signup button {
   pointer-events: none;
   background-color: red;
   border: none;
   color: white;
   padding: 10px;
+}
+
+.container .signup p span {
+  color: aqua;
+  cursor: pointer;
+}
+
+.container .login {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.container .login input {
+  padding: 10px;
+}
+
+.container .login button {
+  pointer-events: none;
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
